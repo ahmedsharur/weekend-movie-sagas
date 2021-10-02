@@ -1,7 +1,7 @@
 import { useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
-function MovieListItem(movie) {
+function MovieListItem({movie}) {
   const dispatch = useDispatch();
   const history = useHistory();
 
