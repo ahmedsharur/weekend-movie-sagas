@@ -9,6 +9,7 @@ function MovieList() {
     const movies = useSelector(store => store.movies);
 
     useEffect(() => {
+     // dispatch an action to request the movieList from the API
         dispatch({ type: 'FETCH_MOVIES' });
     }, []);
 

@@ -13,7 +13,7 @@ function MovieListItem({movie}) {
   return (
     <div key={movie.id}>
       <h3>{movie.title}</h3>
-      <img src={movie.poster} alt={movie.title} /><button onClick={viewMovieDetails}>View Details</button>
+      <img onClick={viewMovieDetails}src={movie.poster}  alt={movie.title} />
     </div>
   );
 }

@@ -19,9 +19,11 @@ function* rootSaga() {
 
 function* fetchAllMovies() {
     // get all movies from the DB
+    //catch all errors
     try {
         const movies = yield axios.get('/api/movie');
         console.log('get all:', movies.data);
+        // put will dispatch an action 
         yield put({ type: 'SET_MOVIES', payload: movies.data });
 
     } catch {
@@ -30,9 +32,10 @@ function* fetchAllMovies() {
         
 }
  function* fetchMovieDetails(action) {
+     //catch all errors
     try{
         const movie = action.payload;
-        const movieDetails = yield axios.get(`/api/movie/detail/${movie.id}`,);
+        const movieDetails = yield axios.get(`/api/movie/detail/${movie.id}`);
         yield put({type: 'SET_MOVIE_DETAIL', payload: movieDetails.data})
     }catch(error){
         console.log('in fetchMovieDetails', error)
