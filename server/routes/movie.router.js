@@ -17,7 +17,7 @@ router.get('/', (req, res) => {
 });
 
 router.get('/detail/:id', (req, res) => {
-  const queryText = 'SELECT FIRST(*) FROM movies WHERE id=$1';
+  const queryText = 'SELECT * FROM movies WHERE id=$1';
   pool.query(queryText, [req.params.id])
     .then((result) => { res.send(result.rows[0]); })
     .catch((err) => {
